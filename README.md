@@ -6,5 +6,21 @@ large enterprise has complicated organization structure. different level staff s
 the trust relationship is built by configing the json @ role configuration console.
 
 the snapshot of the role configuration console is as below:
+![Screen Shot 2022-01-30 at 1 34 16 PM](https://user-images.githubusercontent.com/97269758/151688063-8c283758-1e78-4b5e-8f97-5ac6c4acb860.png)
 
-
+the trust relationship is built by configuring the following json:
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<account id>:user/dev_user"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+```
+the trust relationship cannot be de-attached by deleting the json.
