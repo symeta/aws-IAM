@@ -64,13 +64,11 @@ Policy的json字符串如下：
 
 <img width="1220" alt="Screen Shot 2022-04-15 at 10 42 25 PM" src="https://user-images.githubusercontent.com/97269758/163584557-030d6cba-a593-4a16-ab78-27e93b3ea1e3.png">
 
-
+<img width="1427" alt="Screen Shot 2022-04-15 at 10 47 43 PM" src="https://user-images.githubusercontent.com/97269758/163585122-cd5d5c41-2a8c-4ff0-bb06-990fb4dff1d7.png">
 
 6. 将用户添加到对用的用户组里
 
 <img width="1015" alt="Screen Shot 2022-04-15 at 8 51 14 PM" src="https://user-images.githubusercontent.com/97269758/163572868-de895d43-2125-48ed-a661-6025d72a98e4.png">
-
-<img width="1427" alt="Screen Shot 2022-04-15 at 10 47 43 PM" src="https://user-images.githubusercontent.com/97269758/163585122-cd5d5c41-2a8c-4ff0-bb06-990fb4dff1d7.png">
 
 这样这个Group_Analytics用户组就只具有访问demo-bkt-apr这个桶， 以及使用athena权限。
 IAM用户User_John因为在这个组内，所以也只有这些权限。
