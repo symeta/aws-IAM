@@ -74,7 +74,7 @@ Policy的json字符串如下：
 IAM用户User_John因为在这个组内，所以也只有这些权限。
 
 
-## Athena表控制
+# Athena表控制
 
 1. service console上输入lake formation
 
