@@ -32,6 +32,53 @@
 
 
 ## IAM用户S3桶访问控制
+1. 创建一个用户自定义的policy
+![image](https://user-images.githubusercontent.com/97269758/163575060-f0a958ef-f589-4e74-ab74-aacb05fb3447.png)
+
+policy的json字符串如下：
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": "arn:aws-cn:s3:::*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws-cn:s3:::group-analytics-bucket"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws-cn:s3:::group-analytics-bucket/*"
+            ]
+        }
+    ]
+}
+```
+2. Attach这个policy给User_John
+<img width="1427" alt="Screen Shot 2022-04-15 at 9 18 00 PM" src="https://user-images.githubusercontent.com/97269758/163575391-37fe32bc-ff7e-49e4-8416-9785adb2d1e6.png">
+
+<img width="1338" alt="Screen Shot 2022-04-15 at 9 18 23 PM" src="https://user-images.githubusercontent.com/97269758/163575424-24127f3b-d098-48b9-9b83-8037d2bd09fd.png">
+
+可以看到User_John的权限状态：
+<img width="1455" alt="Screen Shot 2022-04-15 at 9 19 27 PM" src="https://user-images.githubusercontent.com/97269758/163575566-0b1f4a3d-08e2-4c8a-afe2-9cd56e601446.png">
+
 
 ## IAM用户Athena表访问控制
 
